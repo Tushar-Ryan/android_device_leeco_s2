@@ -1,0 +1,2 @@
+# android_device_leeco_s2
+android_device_leeco_s2
