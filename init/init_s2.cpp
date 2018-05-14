@@ -130,6 +130,8 @@ void vendor_load_properties() {
     int isX520 = 0, isX522 = 0, isX526 = 0, isX527 = 0;
 
     // Default props
+    property_set("ro.thermanager.config", "/system/vendor/etc/thermanager.xml");
+
     if (read_file2(DEVINFO_FILE, device, sizeof(device)))
     {
         if (!strncmp(device, "s2_open", 7))
@@ -164,6 +166,7 @@ void vendor_load_properties() {
     {
         // This is X526
         property_set("ro.product.model", "X526");
+        property_set("ro.thermanager.config", "/system/vendor/etc/thermanager_X526.xml");
     }
     else if (isX527)
     {

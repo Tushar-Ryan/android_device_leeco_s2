@@ -274,15 +274,15 @@ service gx_fpd /system/bin/gx_fpd
     group root system
     seclabel u:r:goodix:s0
 
-service thermal-engine /vendor/bin/thermal-engine
-    class main
+# OSS thermal management
+service thermanager /system/vendor/bin/thermanager ${ro.thermanager.config}
+    class late_start
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
     group root
-    writepid /dev/cpuset/system-background/tasks
-    seclabel u:r:thermal-engine:s0
+    seclabel u:r:thermanager:s0
 
 on property:persist.sys.le_fast_chrg_enable=1
     write /sys/class/power_supply/battery/le_quick_charge_mode 0

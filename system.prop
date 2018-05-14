@@ -251,4 +251,4 @@ ro.max.fling_velocity=20000
 ro.audio.flinger_standbytime_ms=300
 
 # Model is set via init library 
- ro.product.model     
+ ro.product.model=x526     

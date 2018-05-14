@@ -28,6 +28,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_AAPT_CONFIG := normal
 
+#Offline charging animation
+ PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Dalvik heap and hwui memory limits
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
@@ -296,7 +300,8 @@ PRODUCT_PACKAGES += \
     thermal.msm8952
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+    $(LOCAL_PATH)/configs/thermanager.xml:system/vendor/etc/thermanager.xml \
+    $(LOCAL_PATH)/configs/thermanager_X526.xml:system/vendor/etc/thermanager_X526.xml
 
 # USB
 PRODUCT_PACKAGES += \
