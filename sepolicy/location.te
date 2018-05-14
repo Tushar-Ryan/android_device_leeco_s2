@@ -1,2 +1,0 @@
-get_prop(location, wcnss_prop);
-allow location sysfs:dir { r_dir_perms };
