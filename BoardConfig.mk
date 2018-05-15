@@ -113,7 +113,7 @@ TARGET_USES_QCOM_MM_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 BOARD_SUPPORTS_SOUND_TRIGGER := false
 
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bionic
@@ -151,6 +151,7 @@ TARGET_LDPRELOAD := libNimsWrap.so
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH := $(DEVICE_PATH)/cryptfs_hw
 
 # CSVT
 TARGET_USES_CSVT := true
@@ -214,9 +215,9 @@ ifeq ($(HOST_OS),linux)
     ifeq ($(WITH_DEXPREOPT),)
       WITH_DEXPREOPT := true
       WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
   endif
-endif
+  endif
+ endif
 
 # clang
 USE_CLANG_PLATFORM_BUILD := true
@@ -228,7 +229,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
-include device/qcom/sepolicy/legacy-sepolicy.mk
+#include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # OTA Assert
