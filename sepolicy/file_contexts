@@ -21,3 +21,6 @@
 /dev/goodix_fp                                             u:object_r:goodix_device:s0
 /data/goodix(/.*)?                                         u:object_r:goodix_data_file:s0
 /dev/i2c_smartpa                                           u:object_r:smartpa_device:s0
+/system/bin/thermanager                                    u:object_r:thermanager_exec:s0
+/sys/module/msm_performance(/.*)?                          u:object_r:sysfs_performance:s0
+/system/vendor/bin/time_daemon                             u:object_r:time_daemon_exec:s0

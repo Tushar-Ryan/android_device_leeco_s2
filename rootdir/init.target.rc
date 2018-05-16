@@ -185,7 +185,7 @@ service perfd /vendor/bin/perfd
    user root
    disabled
 
-service time_daemon /vendor/bin/time_daemon
+service time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
