@@ -461,6 +461,12 @@ service sensors /vendor/bin/sensors.qcom
     group root
     disabled
 
+service charger /charger
+   class charger
+   group system graphics
+   seclabel u:r:charger:s0
+   writepid /dev/cpuset/system-background/tasks
+
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
